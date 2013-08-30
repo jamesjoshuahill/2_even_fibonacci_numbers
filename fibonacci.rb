@@ -1,11 +1,11 @@
 class Fibonacci
 
-	def fibonacci_sequence(how_many)
-	  how_many = 32 if how_many > 32
-	  return [1] if how_many == 1
-	  fibonacci = [1, 2]
-	  1.upto(how_many - 2) { fibonacci.push(fibonacci[-1] + fibonacci[-2]) }
-	  fibonacci
+	def fib(n)
+	  [0,1].include?(n) ? n : fib(n-1) + fib(n-2)
+	end
+
+	def fib_up_to(n)
+	  (1..n).to_a.map { |n| fib(n) }
 	end
 
 	def sum_of_even(fibonacci)
