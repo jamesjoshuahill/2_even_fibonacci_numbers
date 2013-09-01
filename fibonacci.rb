@@ -8,6 +8,17 @@ class Fibonacci
 	  (1..n).to_a.map { |n| fib(n) }
 	end
 
+  def fib_up_to_limit(limit)
+    n = 1
+    fibs = [1]
+    while fibs.last < limit
+      next_fib = fib(n)
+      next_fib < limit ? fibs.push(next_fib) : break 
+      n += 1
+    end
+    fibs
+  end
+
 	def sum_of_even(fibonacci)
 	  fibonacci.inject(0) { |sum, n| n.even? ? sum + n : sum }
 	end
